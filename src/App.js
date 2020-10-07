@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useTable } from 'react-table'
 
@@ -88,7 +88,6 @@ function Table({ columns, data }) {
                 return (
                     <tr {...row.getRowProps()}>
                         {row.cells.map((cell, index) => {
-                            console.log('cell', cell);
                             if(index === 0) {
                                 return <th {...cell.getCellProps()}>{cell.render('Cell')}</th>;
                             } else {
@@ -104,33 +103,71 @@ function Table({ columns, data }) {
 }
 
 function App() {
-    const [columnCount, setColumnCount] = useState(7);
-    const columns = React.useMemo(
-        () => {
-            return Array(columnCount).fill(0).map((item, index) => {
-                return {
-                    Header: `Column ${index + 1}`,
-                    accessor: `column${index}`,
-                    sticky: 'top',
-                }
-            })
-        },
-        [columnCount]
-    );
+    const [columns, setColumns] = useState([]);
+    const [rowData, setRowData] = useState([]);
+    const [columnCount, setColumnCount] = useState(0);
 
-    const handleAddColumn = () => {
-        setColumnCount(columnCount + Math.trunc(Math.random() * 10))
+    // useEffect(() => {
+    //     fetch('http://localhost:9001/lenders').then(async(response) => {
+    //         const data = await response.json();
+    //         setRowData([...rowData, ...data])
+    //     });
+    // }, []);
+
+    const fetchNiches = () => {
+        fetch('http://localhost:9001/niches/' + columnCount).then(async(response) => {
+            setColumnCount(columnCount+1);
+            const data = await response.json();
+            const newColumns = data.columns.map(({ title, columnId }) => ({
+                Header: title,
+                accessor: `accessor-${columnId}`
+            }));
+            setColumns([...columns, ...newColumns]);
+
+            console.log(data.data);
+            let newRowData = null;
+            if(rowData.length === 0) {
+                newRowData = data.data.map(({ lenderName, values }) => {
+                    return {
+                        "csq": lenderName,
+                        ...values
+                    }
+                });
+            } else {
+                newRowData = data.data.map(({values}, index) => {
+                    return {
+                        ...rowData[index],
+                        ...values,
+                    }
+                })
+            }
+
+            console.log('existing rowdata ', rowData);
+            console.log('new rowdata ', newRowData);
+
+            setRowData([...newRowData]);
+        });
     }
 
-    const data = React.useMemo(() => makeData(100, columnCount), [columnCount])
+    const cols = React.useMemo(
+        () => {
+            console.log('something changed', columns);
+            return [{
+                Header: `CSQ`,
+                accessor: `csq`
+            }, ...columns];
+        },
+        [columns]
+    );
 
-    console.log(columns, data);
+    const data = React.useMemo(() => [...rowData], [rowData]);
+    console.log('final', data);
 
     return (
         <>
-            <button type="button" onClick={handleAddColumn} style={{ margin: '10px' }}>AddColumns {columnCount}</button>
+            <button type="button" onClick={fetchNiches} style={{ margin: '10px' }}>AddColumns {columnCount}</button>
             <Styles>
-                <Table columns={columns} data={data}/>
+                <Table columns={cols} data={data}/>
             </Styles>
         </>
     )

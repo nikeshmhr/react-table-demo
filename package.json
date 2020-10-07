@@ -1,10 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "start": "export PORT=9000;json-server --port 9001 --watch db.json & rescripts start",
+    "start": "export PORT=9000;rescripts start",
     "build": "rescripts build",
     "test": "rescripts test",
-    "eject": "rescripts eject"
+    "eject": "rescripts eject",
+    "server": "json-server --port 9001 --watch db.json"
   },
   "dependencies": {
     "namor": "^1.1.2",
