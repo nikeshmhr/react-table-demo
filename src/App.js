@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useTable } from 'react-table'
+import { useSortBy, useTable } from 'react-table'
+import _ from 'lodash';
 
 import makeData from './makeData'
 
@@ -68,7 +69,9 @@ function Table({ columns, data }) {
         {
             columns,
             data
-        });
+        },
+        useSortBy
+    );
 
 // Render the UI for your table
     return (
@@ -77,7 +80,7 @@ function Table({ columns, data }) {
             {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map(column => (
-                        <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                        <th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render('Header')}</th>
                     ))}
                 </tr>
             ))}
@@ -107,51 +110,86 @@ function App() {
     const [rowData, setRowData] = useState([]);
     const [columnCount, setColumnCount] = useState(0);
 
-    // useEffect(() => {
-    //     fetch('http://localhost:9001/lenders').then(async(response) => {
-    //         const data = await response.json();
-    //         setRowData([...rowData, ...data])
-    //     });
-    // }, []);
+    useEffect(() => {
+        fetch('http://localhost:9001/lenders').then(async(response) => {
+            const data = await response.json();
+
+            window.localStorage.setItem("lenders", JSON.stringify(data));
+            const lenderData = data.map((lender) => {
+                return {
+                    csq: lender.name
+                };
+            })
+            setRowData([...rowData, ...lenderData])
+        });
+    }, []);
 
     const fetchNiches = () => {
         fetch('http://localhost:9001/niches/' + columnCount).then(async(response) => {
-            setColumnCount(columnCount+1);
+            setColumnCount(columnCount + 1);
             const data = await response.json();
-            const newColumns = data.columns.map(({ title, columnId }) => ({
-                Header: title,
-                accessor: `accessor-${columnId}`
+            const newColumns = data.columns.map(({ label, id }) => ({
+                Header: label,
+                accessor: id
             }));
             setColumns([...columns, ...newColumns]);
 
-            console.log(data.data);
-            let newRowData = null;
+            let newRowData = [];
+            let newLenderRowData = [];
             if(rowData.length === 0) {
-                newRowData = data.data.map(({ lenderName, values }) => {
+                newRowData = data.rowData.map(({ lenderInfo: { name: lenderName }, cellData }) => {
+                    const cellValues = cellData.reduce((cur, acc) => {
+                        return {
+                            ...cur,
+                            [acc.columnId]: acc.value
+                        }
+                    }, {});
                     return {
                         "csq": lenderName,
-                        ...values
+                        ...cellValues
                     }
                 });
             } else {
-                newRowData = data.data.map(({values}, index) => {
-                    return {
-                        ...rowData[index],
-                        ...values,
-                    }
-                })
+                newLenderRowData = data.rowData.filter(({ lenderInfo }) => !_.find(rowData, { csq: lenderInfo.name }))
+                    .map(({ lenderInfo: { name: lenderName }, cellData }) => {
+                        const cellValues = cellData.reduce((cur, acc) => {
+                            return {
+                                ...cur,
+                                [acc.columnId]: acc.value
+                            }
+                        }, {});
+                        return {
+                            "csq": lenderName,
+                            ...cellValues
+                        }
+                    });
+                // console.log(newLenderRowData);
+                newRowData = data.rowData.filter(({ lenderInfo }) => _.find(rowData, { csq: lenderInfo.name }))
+                    .map(({ lenderInfo: { name: lenderName }, cellData }) => {
+                        const cellValues = cellData.reduce((cur, acc) => {
+                            return {
+                                ...cur,
+                                [acc.columnId]: acc.value
+                            }
+                        }, {});
+                        const currElement = _.find(rowData, { csq: lenderName });
+                        return {
+                            ...currElement,
+                            ...cellValues
+                        }
+                    });
             }
-
-            console.log('existing rowdata ', rowData);
-            console.log('new rowdata ', newRowData);
-
-            setRowData([...newRowData]);
+            // console.log(newRowData, newLenderRowData);
+            if(newRowData.length === 0) {
+                setRowData([...rowData, ...newLenderRowData]);
+            } else {
+                setRowData([...newRowData, ...newLenderRowData]);
+            }
         });
     }
 
     const cols = React.useMemo(
         () => {
-            console.log('something changed', columns);
             return [{
                 Header: `CSQ`,
                 accessor: `csq`
@@ -161,8 +199,8 @@ function App() {
     );
 
     const data = React.useMemo(() => [...rowData], [rowData]);
-    console.log('final', data);
 
+    console.log('final', cols, data);
     return (
         <>
             <button type="button" onClick={fetchNiches} style={{ margin: '10px' }}>AddColumns {columnCount}</button>

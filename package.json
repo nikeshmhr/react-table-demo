@@ -8,6 +8,7 @@
     "server": "json-server --port 9001 --watch db.json"
   },
   "dependencies": {
+    "lodash": "^4.17.20",
     "namor": "^1.1.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

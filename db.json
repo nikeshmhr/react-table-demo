@@ -1,1635 +1,236 @@
 {
   "niches": [
     {
-      "id": 0,
+      "id": "0",
+      "name": "niche_bonus_income",
+      "label": "Bonus Income",
+      "defaultColumnId": "incomeRate",
       "columns": [
         {
-          "columnId": 0,
-          "title": "Surat Thani"
+          "id": "incomeRate",
+          "label": "Income %",
+          "operator": "lte",
+          "parameter": "REQUIRED_INCOME_RATE",
+          "type": "float",
+          "format": "percentage"
         },
         {
-          "columnId": 1,
-          "title": "Toulouse"
-        },
-        {
-          "columnId": 2,
-          "title": "Mbabane"
-        },
-        {
-          "columnId": 3,
-          "title": "Batticaloa"
-        },
-        {
-          "columnId": 4,
-          "title": "Lanzhou"
-        },
-        {
-          "columnId": 5,
-          "title": "Blantyre"
-        },
-        {
-          "columnId": 6,
-          "title": "Hiroshima"
-        },
-        {
-          "columnId": 7,
-          "title": "Chengdu"
-        },
-        {
-          "columnId": 8,
-          "title": "Nassau"
-        },
-        {
-          "columnId": 9,
-          "title": "Córdoba"
+          "id": "incomeRateAnother",
+          "label": "Income % (Another)",
+          "operator": "lte",
+          "parameter": "REQUIRED_INCOME_RATE",
+          "type": "float",
+          "format": "percentage"
         }
       ],
-      "data": [
+      "rowData": [
         {
-          "id": 0,
-          "lenderId": 0,
-          "lenderName": "TT",
-          "values": {
-            "accessor-1": 4,
-            "accessor-2": 43,
-            "accessor-3": 32,
-            "accessor-4": 40,
-            "accessor-5": 84,
-            "accessor-6": 77,
-            "accessor-7": 82,
-            "accessor-8": 93,
-            "accessor-9": 33,
-            "accessor-0": 37
-          }
-        },
-        {
-          "id": 1,
-          "lenderId": 1,
-          "lenderName": "GA",
-          "values": {
-            "accessor-1": 79,
-            "accessor-2": 95,
-            "accessor-3": 57,
-            "accessor-4": 50,
-            "accessor-5": 50,
-            "accessor-6": 83,
-            "accessor-7": 70,
-            "accessor-8": 64,
-            "accessor-9": 89,
-            "accessor-0": 55
-          }
-        },
-        {
-          "id": 2,
-          "lenderId": 2,
-          "lenderName": "JP",
-          "values": {
-            "accessor-1": 53,
-            "accessor-2": 75,
-            "accessor-3": 52,
-            "accessor-4": 40,
-            "accessor-5": 48,
-            "accessor-6": 55,
-            "accessor-7": 90,
-            "accessor-8": 92,
-            "accessor-9": 61,
-            "accessor-0": 72
-          }
-        },
-        {
-          "id": 3,
-          "lenderId": 3,
-          "lenderName": "CZ",
-          "values": {
-            "accessor-1": 98,
-            "accessor-2": 7,
-            "accessor-3": 26,
-            "accessor-4": 78,
-            "accessor-5": 17,
-            "accessor-6": 36,
-            "accessor-7": 99,
-            "accessor-8": 23,
-            "accessor-9": 21,
-            "accessor-0": 50
-          }
-        },
-        {
-          "id": 4,
-          "lenderId": 4,
-          "lenderName": "AR",
-          "values": {
-            "accessor-1": 52,
-            "accessor-2": 50,
-            "accessor-3": 27,
-            "accessor-4": 65,
-            "accessor-5": 29,
-            "accessor-6": 56,
-            "accessor-7": 90,
-            "accessor-8": 88,
-            "accessor-9": 55,
-            "accessor-0": 33
-          }
+          "lenderInfo": {
+            "id": "id",
+            "lenderId": "lender ID",
+            "name": "Lender name",
+            "pricing": "Content to be decided [Enum]",
+            "categoryId": "lender category ID",
+            "createdAt": "some date"
+          },
+          "cellData": [
+            {
+              "id": "id",
+              "nicheId": "niche ID OR niche_bonus_income",
+              "columnId": "incomeRate",
+              "lenderId": "ABL",
+              "value": 90.00,
+              "stateId": "colourCodeId",
+              "hasActivePendingRequest": true,
+              "updatedAt": "datetime",
+              "updatedBy": "admin ID"
+            },
+            {
+              "id": "id",
+              "nicheId": "niche ID OR niche_bonus_income",
+              "columnId": "incomeRateAnother",
+              "lenderId": "ABL",
+              "value": 910.00,
+              "stateId": "colourCodeId",
+              "hasActivePendingRequest": true,
+              "updatedAt": "datetime",
+              "updatedBy": "admin ID"
+            }
+          ]
         }
       ]
     },
     {
-      "id": 1,
+      "id": "1",
+      "name": "niche_something_income",
+      "label": "Something Income",
+      "defaultColumnId": "somethingIncomeRate",
       "columns": [
         {
-          "columnId": 10,
-          "title": "Kathmandu"
+          "id": "somethingIncomeRate",
+          "label": "Something Income %",
+          "operator": "lte",
+          "parameter": "REQUIRED_INCOME_RATE",
+          "type": "float",
+          "format": "percentage"
         },
         {
-          "columnId": 11,
-          "title": "Macapá"
-        },
-        {
-          "columnId": 12,
-          "title": "Kyoto"
-        },
-        {
-          "columnId": 13,
-          "title": "Santiago de Cuba"
-        },
-        {
-          "columnId": 14,
-          "title": "Palembang"
-        },
-        {
-          "columnId": 15,
-          "title": "Cusco"
-        },
-        {
-          "columnId": 16,
-          "title": "San José"
-        },
-        {
-          "columnId": 17,
-          "title": "Tirana"
-        },
-        {
-          "columnId": 18,
-          "title": "Nairobi"
-        },
-        {
-          "columnId": 19,
-          "title": "Samara"
+          "id": "somethingIncomeRateAnother",
+          "label": "Something Income % (Another)",
+          "operator": "lte",
+          "parameter": "REQUIRED_INCOME_RATE",
+          "type": "float",
+          "format": "percentage"
         }
       ],
-      "data": [
+      "rowData": [
         {
-          "id": 0,
-          "lenderId": 0,
-          "lenderName": "JM",
-          "values": {
-            "accessor-11": 22,
-            "accessor-12": 92,
-            "accessor-13": 84,
-            "accessor-14": 6,
-            "accessor-15": 22,
-            "accessor-16": 56,
-            "accessor-17": 43,
-            "accessor-18": 26,
-            "accessor-19": 92,
-            "accessor-10": 7
-          }
-        },
-        {
-          "id": 1,
-          "lenderId": 1,
-          "lenderName": "VE",
-          "values": {
-            "accessor-11": 22,
-            "accessor-12": 92,
-            "accessor-13": 84,
-            "accessor-14": 6,
-            "accessor-15": 22,
-            "accessor-16": 56,
-            "accessor-17": 43,
-            "accessor-18": 26,
-            "accessor-19": 92,
-            "accessor-10": 7
-          }
-        },
-        {
-          "id": 2,
-          "lenderId": 2,
-          "lenderName": "FO",
-          "values": {
-            "accessor-11": 22,
-            "accessor-12": 92,
-            "accessor-13": 84,
-            "accessor-14": 6,
-            "accessor-15": 22,
-            "accessor-16": 56,
-            "accessor-17": 43,
-            "accessor-18": 26,
-            "accessor-19": 92,
-            "accessor-10": 7
-          }
-        },
-        {
-          "id": 3,
-          "lenderId": 3,
-          "lenderName": "LA",
-          "values": {
-            "accessor-11": 22,
-            "accessor-12": 92,
-            "accessor-13": 84,
-            "accessor-14": 6,
-            "accessor-15": 22,
-            "accessor-16": 56,
-            "accessor-17": 43,
-            "accessor-18": 26,
-            "accessor-19": 92,
-            "accessor-10": 7
-          }
-        },
-        {
-          "id": 4,
-          "lenderId": 4,
-          "lenderName": "IQ",
-          "values": {
-            "accessor-11": 22,
-            "accessor-12": 92,
-            "accessor-13": 84,
-            "accessor-14": 6,
-            "accessor-15": 22,
-            "accessor-16": 56,
-            "accessor-17": 43,
-            "accessor-18": 26,
-            "accessor-19": 92,
-            "accessor-10": 7
-          }
+          "lenderInfo": {
+            "id": "id",
+            "lenderId": "lender ID",
+            "name": "Lender name",
+            "pricing": "Content to be decided [Enum]",
+            "categoryId": "lender category ID",
+            "createdAt": "some date"
+          },
+          "cellData": [
+            {
+              "id": "id",
+              "nicheId": "niche ID OR niche_bonus_income",
+              "columnId": "somethingIncomeRate",
+              "lenderId": "ABL",
+              "value": 990.00,
+              "stateId": "colourCodeId",
+              "hasActivePendingRequest": true,
+              "updatedAt": "datetime",
+              "updatedBy": "admin ID"
+            },
+            {
+              "id": "id",
+              "nicheId": "niche ID OR niche_bonus_income",
+              "columnId": "somethingIncomeRateAnother",
+              "lenderId": "ABL",
+              "value": 999.00,
+              "stateId": "colourCodeId",
+              "hasActivePendingRequest": true,
+              "updatedAt": "datetime",
+              "updatedBy": "admin ID"
+            }
+          ]
         }
       ]
     },
     {
-      "id": 2,
+      "id": "2",
+      "name": "niche_different_income",
+      "label": "Different Income",
+      "defaultColumnId": "differentIncomeRate",
       "columns": [
         {
-          "columnId": 20,
-          "title": "Miami"
+          "id": "differentIncomeRate",
+          "label": "Different Income %",
+          "operator": "lte",
+          "parameter": "REQUIRED_INCOME_RATE",
+          "type": "float",
+          "format": "percentage"
         },
         {
-          "columnId": 21,
-          "title": "Strasbourg"
-        },
-        {
-          "columnId": 22,
-          "title": "Minneapolis"
-        },
-        {
-          "columnId": 23,
-          "title": "Cartagena"
-        },
-        {
-          "columnId": 24,
-          "title": "Hanoi"
-        },
-        {
-          "columnId": 25,
-          "title": "Ibadan"
-        },
-        {
-          "columnId": 26,
-          "title": "Murmansk"
-        },
-        {
-          "columnId": 27,
-          "title": "Francistown"
-        },
-        {
-          "columnId": 28,
-          "title": "Iquitos"
-        },
-        {
-          "columnId": 29,
-          "title": "Hanga Roa"
+          "id": "differentIncomeRateAnother",
+          "label": "Different Income % (Another)",
+          "operator": "lte",
+          "parameter": "REQUIRED_INCOME_RATE",
+          "type": "float",
+          "format": "percentage"
         }
       ],
-      "data": [
+      "rowData": [
         {
-          "id": 0,
-          "lenderId": 0,
-          "lenderName": "GH",
-          "values": {
-            "accessor-21": 38,
-            "accessor-22": 85,
-            "accessor-23": 94,
-            "accessor-24": 64,
-            "accessor-25": 63,
-            "accessor-26": 98,
-            "accessor-27": 26,
-            "accessor-28": 55,
-            "accessor-29": 52,
-            "accessor-20": 3
-          }
+          "lenderInfo": {
+            "id": "id",
+            "lenderId": "lender ID",
+            "name": "Lender name different",
+            "pricing": "Content to be decided [Enum]",
+            "categoryId": "lender category ID",
+            "createdAt": "some date"
+          },
+          "cellData": [
+            {
+              "id": "id",
+              "nicheId": "niche ID OR niche_bonus_income",
+              "columnId": "differentIncomeRate",
+              "lenderId": "ABL",
+              "value": 1.00,
+              "stateId": "colourCodeId",
+              "hasActivePendingRequest": true,
+              "updatedAt": "datetime",
+              "updatedBy": "admin ID"
+            },
+            {
+              "id": "id",
+              "nicheId": "niche ID OR niche_bonus_income",
+              "columnId": "differentIncomeRateAnother",
+              "lenderId": "ABL",
+              "value": 999.00,
+              "stateId": "colourCodeId",
+              "hasActivePendingRequest": true,
+              "updatedAt": "datetime",
+              "updatedBy": "admin ID"
+            }
+          ]
         },
         {
-          "id": 1,
-          "lenderId": 1,
-          "lenderName": "HU",
-          "values": {
-            "accessor-21": 38,
-            "accessor-22": 85,
-            "accessor-23": 94,
-            "accessor-24": 64,
-            "accessor-25": 63,
-            "accessor-26": 98,
-            "accessor-27": 26,
-            "accessor-28": 55,
-            "accessor-29": 52,
-            "accessor-20": 3
-          }
-        },
-        {
-          "id": 2,
-          "lenderId": 2,
-          "lenderName": "ID",
-          "values": {
-            "accessor-21": 38,
-            "accessor-22": 85,
-            "accessor-23": 94,
-            "accessor-24": 64,
-            "accessor-25": 63,
-            "accessor-26": 98,
-            "accessor-27": 26,
-            "accessor-28": 55,
-            "accessor-29": 52,
-            "accessor-20": 3
-          }
-        },
-        {
-          "id": 3,
-          "lenderId": 3,
-          "lenderName": "CO",
-          "values": {
-            "accessor-21": 38,
-            "accessor-22": 85,
-            "accessor-23": 94,
-            "accessor-24": 64,
-            "accessor-25": 63,
-            "accessor-26": 98,
-            "accessor-27": 26,
-            "accessor-28": 55,
-            "accessor-29": 52,
-            "accessor-20": 3
-          }
-        },
-        {
-          "id": 4,
-          "lenderId": 4,
-          "lenderName": "AU",
-          "values": {
-            "accessor-21": 38,
-            "accessor-22": 85,
-            "accessor-23": 94,
-            "accessor-24": 64,
-            "accessor-25": 63,
-            "accessor-26": 98,
-            "accessor-27": 26,
-            "accessor-28": 55,
-            "accessor-29": 52,
-            "accessor-20": 3
-          }
+          "lenderInfo": {
+            "id": "id",
+            "lenderId": "lender ID",
+            "name": "Lender name",
+            "pricing": "Content to be decided [Enum]",
+            "categoryId": "lender category ID",
+            "createdAt": "some date"
+          },
+          "cellData": [
+            {
+              "id": "id",
+              "nicheId": "niche ID OR niche_bonus_income",
+              "columnId": "differentIncomeRate",
+              "lenderId": "ABL",
+              "value": 9000.00,
+              "stateId": "colourCodeId",
+              "hasActivePendingRequest": true,
+              "updatedAt": "datetime",
+              "updatedBy": "admin ID"
+            },
+            {
+              "id": "id",
+              "nicheId": "niche ID OR niche_bonus_income",
+              "columnId": "differentIncomeRateAnother",
+              "lenderId": "ABL",
+              "value": 9100.00,
+              "stateId": "colourCodeId",
+              "hasActivePendingRequest": true,
+              "updatedAt": "datetime",
+              "updatedBy": "admin ID"
+            }
+          ]
         }
-      ]
-    },
-    {
-      "id": 3,
-      "columns": [
-        {
-          "columnId": 30,
-          "title": "Baku"
-        },
-        {
-          "columnId": 31,
-          "title": "Las Palmas de Gran Canaria"
-        },
-        {
-          "columnId": 32,
-          "title": "Algiers"
-        },
-        {
-          "columnId": 33,
-          "title": "Charlotte Amalie"
-        },
-        {
-          "columnId": 34,
-          "title": "Multan"
-        },
-        {
-          "columnId": 35,
-          "title": "Timbuktu"
-        },
-        {
-          "columnId": 36,
-          "title": "Vatican City"
-        },
-        {
-          "columnId": 37,
-          "title": "Dushanbe"
-        },
-        {
-          "columnId": 38,
-          "title": "Malang"
-        },
-        {
-          "columnId": 39,
-          "title": "Greenwich"
-        }
-      ],
-      "data": [
-        {
-          "id": 0,
-          "lenderId": 0,
-          "lenderName": "DZ",
-          "values": {
-            "accessor-31": 30,
-            "accessor-32": 52,
-            "accessor-33": 10,
-            "accessor-34": 10,
-            "accessor-35": 80,
-            "accessor-36": 21,
-            "accessor-37": 29,
-            "accessor-38": 34,
-            "accessor-39": 38,
-            "accessor-30": 3
-          }
-        },
-        {
-          "id": 1,
-          "lenderId": 1,
-          "lenderName": "AI",
-          "values": {
-            "accessor-31": 30,
-            "accessor-32": 52,
-            "accessor-33": 10,
-            "accessor-34": 10,
-            "accessor-35": 80,
-            "accessor-36": 21,
-            "accessor-37": 29,
-            "accessor-38": 34,
-            "accessor-39": 38,
-            "accessor-30": 3
-          }
-        },
-        {
-          "id": 2,
-          "lenderId": 2,
-          "lenderName": "LB",
-          "values": {
-            "accessor-31": 30,
-            "accessor-32": 52,
-            "accessor-33": 10,
-            "accessor-34": 10,
-            "accessor-35": 80,
-            "accessor-36": 21,
-            "accessor-37": 29,
-            "accessor-38": 34,
-            "accessor-39": 38,
-            "accessor-30": 3
-          }
-        },
-        {
-          "id": 3,
-          "lenderId": 3,
-          "lenderName": "FI",
-          "values": {
-            "accessor-31": 30,
-            "accessor-32": 52,
-            "accessor-33": 10,
-            "accessor-34": 10,
-            "accessor-35": 80,
-            "accessor-36": 21,
-            "accessor-37": 29,
-            "accessor-38": 34,
-            "accessor-39": 38,
-            "accessor-30": 3
-          }
-        },
-        {
-          "id": 4,
-          "lenderId": 4,
-          "lenderName": "MC",
-          "values": {
-            "accessor-31": 30,
-            "accessor-32": 52,
-            "accessor-33": 10,
-            "accessor-34": 10,
-            "accessor-35": 80,
-            "accessor-36": 21,
-            "accessor-37": 29,
-            "accessor-38": 34,
-            "accessor-39": 38,
-            "accessor-30": 3
-          }
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "columns": [
-        {
-          "columnId": 40,
-          "title": "Quebec City"
-        },
-        {
-          "columnId": 41,
-          "title": "Bangalore"
-        },
-        {
-          "columnId": 42,
-          "title": "Chiang Mai"
-        },
-        {
-          "columnId": 43,
-          "title": "Cockburn Town"
-        },
-        {
-          "columnId": 44,
-          "title": "Nice"
-        },
-        {
-          "columnId": 45,
-          "title": "Ankara"
-        },
-        {
-          "columnId": 46,
-          "title": "Tbilisi"
-        },
-        {
-          "columnId": 47,
-          "title": "Nanning"
-        },
-        {
-          "columnId": 48,
-          "title": "Zhengzhou"
-        },
-        {
-          "columnId": 49,
-          "title": "Buenos Aires"
-        }
-      ],
-      "data": [
-        {
-          "id": 0,
-          "lenderId": 0,
-          "lenderName": "BS",
-          "values": {
-            "accessor-41": 70,
-            "accessor-42": 97,
-            "accessor-43": 42,
-            "accessor-44": 48,
-            "accessor-45": 81,
-            "accessor-46": 18,
-            "accessor-47": 94,
-            "accessor-48": 17,
-            "accessor-49": 3,
-            "accessor-40": 56
-          }
-        },
-        {
-          "id": 1,
-          "lenderId": 1,
-          "lenderName": "SC",
-          "values": {
-            "accessor-41": 70,
-            "accessor-42": 97,
-            "accessor-43": 42,
-            "accessor-44": 48,
-            "accessor-45": 81,
-            "accessor-46": 18,
-            "accessor-47": 94,
-            "accessor-48": 17,
-            "accessor-49": 3,
-            "accessor-40": 56
-          }
-        },
-        {
-          "id": 2,
-          "lenderId": 2,
-          "lenderName": "IT",
-          "values": {
-            "accessor-41": 70,
-            "accessor-42": 97,
-            "accessor-43": 42,
-            "accessor-44": 48,
-            "accessor-45": 81,
-            "accessor-46": 18,
-            "accessor-47": 94,
-            "accessor-48": 17,
-            "accessor-49": 3,
-            "accessor-40": 56
-          }
-        },
-        {
-          "id": 3,
-          "lenderId": 3,
-          "lenderName": "RU",
-          "values": {
-            "accessor-41": 70,
-            "accessor-42": 97,
-            "accessor-43": 42,
-            "accessor-44": 48,
-            "accessor-45": 81,
-            "accessor-46": 18,
-            "accessor-47": 94,
-            "accessor-48": 17,
-            "accessor-49": 3,
-            "accessor-40": 56
-          }
-        },
-        {
-          "id": 4,
-          "lenderId": 4,
-          "lenderName": "KY",
-          "values": {
-            "accessor-41": 70,
-            "accessor-42": 97,
-            "accessor-43": 42,
-            "accessor-44": 48,
-            "accessor-45": 81,
-            "accessor-46": 18,
-            "accessor-47": 94,
-            "accessor-48": 17,
-            "accessor-49": 3,
-            "accessor-40": 56
-          }
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "columns": [
-        {
-          "columnId": 50,
-          "title": "Chuí"
-        },
-        {
-          "columnId": 51,
-          "title": "Espoo"
-        },
-        {
-          "columnId": 52,
-          "title": "Minsk"
-        },
-        {
-          "columnId": 53,
-          "title": "Tiraspol"
-        },
-        {
-          "columnId": 54,
-          "title": "Fukuoka"
-        },
-        {
-          "columnId": 55,
-          "title": "Mamoudzou"
-        },
-        {
-          "columnId": 56,
-          "title": "Maracaibo"
-        },
-        {
-          "columnId": 57,
-          "title": "London"
-        },
-        {
-          "columnId": 58,
-          "title": "Amritsar"
-        },
-        {
-          "columnId": 59,
-          "title": "Kuala Lumpur"
-        }
-      ],
-      "data": [
-        {
-          "id": 0,
-          "lenderId": 0,
-          "lenderName": "MQ",
-          "values": {
-            "accessor-51": 66,
-            "accessor-52": 10,
-            "accessor-53": 79,
-            "accessor-54": 53,
-            "accessor-55": 86,
-            "accessor-56": 71,
-            "accessor-57": 46,
-            "accessor-58": 79,
-            "accessor-59": 93,
-            "accessor-50": 47
-          }
-        },
-        {
-          "id": 1,
-          "lenderId": 1,
-          "lenderName": "MR",
-          "values": {
-            "accessor-51": 66,
-            "accessor-52": 10,
-            "accessor-53": 79,
-            "accessor-54": 53,
-            "accessor-55": 86,
-            "accessor-56": 71,
-            "accessor-57": 46,
-            "accessor-58": 79,
-            "accessor-59": 93,
-            "accessor-50": 47
-          }
-        },
-        {
-          "id": 2,
-          "lenderId": 2,
-          "lenderName": "RO",
-          "values": {
-            "accessor-51": 66,
-            "accessor-52": 10,
-            "accessor-53": 79,
-            "accessor-54": 53,
-            "accessor-55": 86,
-            "accessor-56": 71,
-            "accessor-57": 46,
-            "accessor-58": 79,
-            "accessor-59": 93,
-            "accessor-50": 47
-          }
-        },
-        {
-          "id": 3,
-          "lenderId": 3,
-          "lenderName": "AE",
-          "values": {
-            "accessor-51": 66,
-            "accessor-52": 10,
-            "accessor-53": 79,
-            "accessor-54": 53,
-            "accessor-55": 86,
-            "accessor-56": 71,
-            "accessor-57": 46,
-            "accessor-58": 79,
-            "accessor-59": 93,
-            "accessor-50": 47
-          }
-        },
-        {
-          "id": 4,
-          "lenderId": 4,
-          "lenderName": "GF",
-          "values": {
-            "accessor-51": 66,
-            "accessor-52": 10,
-            "accessor-53": 79,
-            "accessor-54": 53,
-            "accessor-55": 86,
-            "accessor-56": 71,
-            "accessor-57": 46,
-            "accessor-58": 79,
-            "accessor-59": 93,
-            "accessor-50": 47
-          }
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "columns": [
-        {
-          "columnId": 0,
-          "title": "Libreville"
-        },
-        {
-          "columnId": 1,
-          "title": "Zamboanga City"
-        },
-        {
-          "columnId": 2,
-          "title": "Mecca"
-        },
-        {
-          "columnId": 3,
-          "title": "Greenwich"
-        },
-        {
-          "columnId": 4,
-          "title": "Casablanca"
-        },
-        {
-          "columnId": 5,
-          "title": "Porto-Novo"
-        },
-        {
-          "columnId": 6,
-          "title": "Cannes"
-        },
-        {
-          "columnId": 7,
-          "title": "Boa Vista"
-        },
-        {
-          "columnId": 8,
-          "title": "Yokohama"
-        },
-        {
-          "columnId": 9,
-          "title": "Dushanbe"
-        }
-      ],
-      "data": [
-        {
-          "id": 0,
-          "lenderId": 0,
-          "lenderName": "PW",
-          "values": {
-            "accessor-1": 67,
-            "accessor-2": 50,
-            "accessor-3": 43,
-            "accessor-4": 46,
-            "accessor-5": 54,
-            "accessor-6": 54,
-            "accessor-7": 82,
-            "accessor-8": 32,
-            "accessor-9": 90,
-            "accessor-0": 92
-          }
-        },
-        {
-          "id": 1,
-          "lenderId": 1,
-          "lenderName": "YT",
-          "values": {
-            "accessor-1": 63,
-            "accessor-2": 73,
-            "accessor-3": 74,
-            "accessor-4": 70,
-            "accessor-5": 54,
-            "accessor-6": 50,
-            "accessor-7": 3,
-            "accessor-8": 65,
-            "accessor-9": 79,
-            "accessor-0": 53
-          }
-        },
-        {
-          "id": 2,
-          "lenderId": 2,
-          "lenderName": "TM",
-          "values": {
-            "accessor-1": 7,
-            "accessor-2": 79,
-            "accessor-3": 87,
-            "accessor-4": 19,
-            "accessor-5": 47,
-            "accessor-6": 30,
-            "accessor-7": 17,
-            "accessor-8": 71,
-            "accessor-9": 66,
-            "accessor-0": 75
-          }
-        },
-        {
-          "id": 3,
-          "lenderId": 3,
-          "lenderName": "AO",
-          "values": {
-            "accessor-1": 63,
-            "accessor-2": 51,
-            "accessor-3": 59,
-            "accessor-4": 77,
-            "accessor-5": 80,
-            "accessor-6": 5,
-            "accessor-7": 78,
-            "accessor-8": 79,
-            "accessor-9": 43,
-            "accessor-0": 92
-          }
-        },
-        {
-          "id": 4,
-          "lenderId": 4,
-          "lenderName": "BI",
-          "values": {
-            "accessor-1": 34,
-            "accessor-2": 8,
-            "accessor-3": 96,
-            "accessor-4": 21,
-            "accessor-5": 48,
-            "accessor-6": 48,
-            "accessor-7": 34,
-            "accessor-8": 98,
-            "accessor-9": 37,
-            "accessor-0": 79
-          }
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "columns": [
-        {
-          "columnId": 0,
-          "title": "Munich"
-        },
-        {
-          "columnId": 1,
-          "title": "City of Halifax"
-        },
-        {
-          "columnId": 2,
-          "title": "Koror"
-        },
-        {
-          "columnId": 3,
-          "title": "Djibouti (city)"
-        },
-        {
-          "columnId": 4,
-          "title": "Saskatoon"
-        },
-        {
-          "columnId": 5,
-          "title": "Brasília"
-        },
-        {
-          "columnId": 6,
-          "title": "Makati City"
-        },
-        {
-          "columnId": 7,
-          "title": "Rochester"
-        },
-        {
-          "columnId": 8,
-          "title": "City of San Marino"
-        },
-        {
-          "columnId": 9,
-          "title": "Palembang"
-        }
-      ],
-      "data": [
-        {
-          "id": 0,
-          "lenderId": 0,
-          "lenderName": "AE",
-          "values": {
-            "accessor-1": 77,
-            "accessor-2": 81,
-            "accessor-3": 69,
-            "accessor-4": 23,
-            "accessor-5": 57,
-            "accessor-6": 45,
-            "accessor-7": 79,
-            "accessor-8": 49,
-            "accessor-9": 73,
-            "accessor-0": 55
-          }
-        },
-        {
-          "id": 1,
-          "lenderId": 1,
-          "lenderName": "SE",
-          "values": {
-            "accessor-1": 27,
-            "accessor-2": 54,
-            "accessor-3": 34,
-            "accessor-4": 38,
-            "accessor-5": 95,
-            "accessor-6": 18,
-            "accessor-7": 67,
-            "accessor-8": 62,
-            "accessor-9": 79,
-            "accessor-0": 64
-          }
-        },
-        {
-          "id": 2,
-          "lenderId": 2,
-          "lenderName": "TD",
-          "values": {
-            "accessor-1": 4,
-            "accessor-2": 34,
-            "accessor-3": 29,
-            "accessor-4": 80,
-            "accessor-5": 99,
-            "accessor-6": 2,
-            "accessor-7": 20,
-            "accessor-8": 12,
-            "accessor-9": 28,
-            "accessor-0": 80
-          }
-        },
-        {
-          "id": 3,
-          "lenderId": 3,
-          "lenderName": "LK",
-          "values": {
-            "accessor-1": 53,
-            "accessor-2": 33,
-            "accessor-3": 95,
-            "accessor-4": 77,
-            "accessor-5": 75,
-            "accessor-6": 98,
-            "accessor-7": 73,
-            "accessor-8": 100,
-            "accessor-9": 56,
-            "accessor-0": 10
-          }
-        },
-        {
-          "id": 4,
-          "lenderId": 4,
-          "lenderName": "BO",
-          "values": {
-            "accessor-1": 72,
-            "accessor-2": 97,
-            "accessor-3": 68,
-            "accessor-4": 97,
-            "accessor-5": 21,
-            "accessor-6": 65,
-            "accessor-7": 68,
-            "accessor-8": 39,
-            "accessor-9": 19,
-            "accessor-0": 69
-          }
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "columns": [
-        {
-          "columnId": 0,
-          "title": "Dresden"
-        },
-        {
-          "columnId": 1,
-          "title": "San Antonio"
-        },
-        {
-          "columnId": 2,
-          "title": "Yakutsk"
-        },
-        {
-          "columnId": 3,
-          "title": "Dongguan"
-        },
-        {
-          "columnId": 4,
-          "title": "Fairbanks"
-        },
-        {
-          "columnId": 5,
-          "title": "Bridgetown"
-        },
-        {
-          "columnId": 6,
-          "title": "Washington"
-        },
-        {
-          "columnId": 7,
-          "title": "Mendoza"
-        },
-        {
-          "columnId": 8,
-          "title": "Salt Lake City"
-        },
-        {
-          "columnId": 9,
-          "title": "Frankfurt"
-        }
-      ],
-      "data": [
-        {
-          "id": 0,
-          "lenderId": 0,
-          "lenderName": "DO",
-          "values": {
-            "accessor-1": 44,
-            "accessor-2": 85,
-            "accessor-3": 12,
-            "accessor-4": 13,
-            "accessor-5": 65,
-            "accessor-6": 17,
-            "accessor-7": 96,
-            "accessor-8": 48,
-            "accessor-9": 14,
-            "accessor-0": 31
-          }
-        },
-        {
-          "id": 1,
-          "lenderId": 1,
-          "lenderName": "BG",
-          "values": {
-            "accessor-1": 34,
-            "accessor-2": 6,
-            "accessor-3": 94,
-            "accessor-4": 92,
-            "accessor-5": 69,
-            "accessor-6": 66,
-            "accessor-7": 78,
-            "accessor-8": 54,
-            "accessor-9": 19,
-            "accessor-0": 69
-          }
-        },
-        {
-          "id": 2,
-          "lenderId": 2,
-          "lenderName": "VG",
-          "values": {
-            "accessor-1": 77,
-            "accessor-2": 48,
-            "accessor-3": 18,
-            "accessor-4": 19,
-            "accessor-5": 44,
-            "accessor-6": 81,
-            "accessor-7": 93,
-            "accessor-8": 50,
-            "accessor-9": 4,
-            "accessor-0": 59
-          }
-        },
-        {
-          "id": 3,
-          "lenderId": 3,
-          "lenderName": "MA",
-          "values": {
-            "accessor-1": 25,
-            "accessor-2": 43,
-            "accessor-3": 71,
-            "accessor-4": 44,
-            "accessor-5": 88,
-            "accessor-6": 67,
-            "accessor-7": 4,
-            "accessor-8": 28,
-            "accessor-9": 80,
-            "accessor-0": 9
-          }
-        },
-        {
-          "id": 4,
-          "lenderId": 4,
-          "lenderName": "CM",
-          "values": {
-            "accessor-1": 70,
-            "accessor-2": 13,
-            "accessor-3": 23,
-            "accessor-4": 59,
-            "accessor-5": 48,
-            "accessor-6": 46,
-            "accessor-7": 31,
-            "accessor-8": 83,
-            "accessor-9": 60,
-            "accessor-0": 66
-          }
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "columns": [
-        {
-          "columnId": 0,
-          "title": "Yokohama"
-        },
-        {
-          "columnId": 1,
-          "title": "Darwin"
-        },
-        {
-          "columnId": 2,
-          "title": "Shigatse"
-        },
-        {
-          "columnId": 3,
-          "title": "Arequipa"
-        },
-        {
-          "columnId": 4,
-          "title": "Saskatoon"
-        },
-        {
-          "columnId": 5,
-          "title": "Sana'a"
-        },
-        {
-          "columnId": 6,
-          "title": "Sarajevo"
-        },
-        {
-          "columnId": 7,
-          "title": "Labasa"
-        },
-        {
-          "columnId": 8,
-          "title": "Taichung"
-        },
-        {
-          "columnId": 9,
-          "title": "Oslo"
-        }
-      ],
-      "data": [
-        {
-          "id": 0,
-          "lenderId": 0,
-          "lenderName": "FO",
-          "values": {
-            "accessor-1": 96,
-            "accessor-2": 57,
-            "accessor-3": 76,
-            "accessor-4": 65,
-            "accessor-5": 6,
-            "accessor-6": 47,
-            "accessor-7": 87,
-            "accessor-8": 93,
-            "accessor-9": 32,
-            "accessor-0": 97
-          }
-        },
-        {
-          "id": 1,
-          "lenderId": 1,
-          "lenderName": "IT",
-          "values": {
-            "accessor-1": 73,
-            "accessor-2": 73,
-            "accessor-3": 97,
-            "accessor-4": 58,
-            "accessor-5": 93,
-            "accessor-6": 22,
-            "accessor-7": 2,
-            "accessor-8": 92,
-            "accessor-9": 43,
-            "accessor-0": 67
-          }
-        },
-        {
-          "id": 2,
-          "lenderId": 2,
-          "lenderName": "CD",
-          "values": {
-            "accessor-1": 20,
-            "accessor-2": 31,
-            "accessor-3": 48,
-            "accessor-4": 76,
-            "accessor-5": 95,
-            "accessor-6": 35,
-            "accessor-7": 48,
-            "accessor-8": 62,
-            "accessor-9": 26,
-            "accessor-0": 36
-          }
-        },
-        {
-          "id": 3,
-          "lenderId": 3,
-          "lenderName": "HK",
-          "values": {
-            "accessor-1": 35,
-            "accessor-2": 80,
-            "accessor-3": 26,
-            "accessor-4": 80,
-            "accessor-5": 11,
-            "accessor-6": 50,
-            "accessor-7": 62,
-            "accessor-8": 8,
-            "accessor-9": 73,
-            "accessor-0": 91
-          }
-        },
-        {
-          "id": 4,
-          "lenderId": 4,
-          "lenderName": "MT",
-          "values": {
-            "accessor-1": 4,
-            "accessor-2": 11,
-            "accessor-3": 9,
-            "accessor-4": 77,
-            "accessor-5": 37,
-            "accessor-6": 95,
-            "accessor-7": 68,
-            "accessor-8": 95,
-            "accessor-9": 78,
-            "accessor-0": 62
-          }
-        }
-      ]
-    }
-  ],
-  "columns": [
-    {
-      "id": 1,
-      "values": [
-        "1",
-        "2"
       ]
     }
   ],
   "lenders": [
     {
-      "csq": "BE"
-    },
-    {
-      "csq": "FK"
-    },
-    {
-      "csq": "UG"
-    },
-    {
-      "csq": "TJ"
-    },
-    {
-      "csq": "BM"
-    },
-    {
-      "csq": "SN"
-    },
-    {
-      "csq": "SY"
-    },
-    {
-      "csq": "BT"
-    },
-    {
-      "csq": "AW"
-    },
-    {
-      "csq": "YE"
-    },
-    {
-      "csq": "AQ"
-    },
-    {
-      "csq": "IN"
-    },
-    {
-      "csq": "AQ"
-    },
-    {
-      "csq": "MS"
-    },
-    {
-      "csq": "GE"
-    },
-    {
-      "csq": "KR"
-    },
-    {
-      "csq": "FR"
-    },
-    {
-      "csq": "PL"
-    },
-    {
-      "csq": "HK"
-    },
-    {
-      "csq": "GI"
-    },
-    {
-      "csq": "TD"
-    },
-    {
-      "csq": "UG"
-    },
-    {
-      "csq": "PN"
-    },
-    {
-      "csq": "ZW"
-    },
-    {
-      "csq": "TN"
-    },
-    {
-      "csq": "GY"
-    },
-    {
-      "csq": "KM"
-    },
-    {
-      "csq": "JO"
-    },
-    {
-      "csq": "EG"
-    },
-    {
-      "csq": "VI"
-    },
-    {
-      "csq": "MG"
-    },
-    {
-      "csq": "MK"
-    },
-    {
-      "csq": "MA"
-    },
-    {
-      "csq": "LS"
-    },
-    {
-      "csq": "SZ"
-    },
-    {
-      "csq": "LY"
-    },
-    {
-      "csq": "KH"
-    },
-    {
-      "csq": "NZ"
-    },
-    {
-      "csq": "ZA"
-    },
-    {
-      "csq": "SL"
-    },
-    {
-      "csq": "GQ"
-    },
-    {
-      "csq": "IO"
-    },
-    {
-      "csq": "MC"
-    },
-    {
-      "csq": "YT"
-    },
-    {
-      "csq": "JM"
-    },
-    {
-      "csq": "NU"
-    },
-    {
-      "csq": "GG"
-    },
-    {
-      "csq": "CS"
-    },
-    {
-      "csq": "GL"
-    },
-    {
-      "csq": "AN"
-    },
-    {
-      "csq": "AF"
-    },
-    {
-      "csq": "CO"
-    },
-    {
-      "csq": "PR"
-    },
-    {
-      "csq": "LY"
-    },
-    {
-      "csq": "AX"
-    },
-    {
-      "csq": "CV"
-    },
-    {
-      "csq": "KI"
-    },
-    {
-      "csq": "VC"
-    },
-    {
-      "csq": "CO"
-    },
-    {
-      "csq": "BV"
-    },
-    {
-      "csq": "GI"
-    },
-    {
-      "csq": "MG"
-    },
-    {
-      "csq": "BN"
-    },
-    {
-      "csq": "GR"
-    },
-    {
-      "csq": "BJ"
-    },
-    {
-      "csq": "VI"
-    },
-    {
-      "csq": "RW"
-    },
-    {
-      "csq": "YT"
-    },
-    {
-      "csq": "NI"
-    },
-    {
-      "csq": "GS"
-    },
-    {
-      "csq": "JP"
-    },
-    {
-      "csq": "MZ"
-    },
-    {
-      "csq": "VG"
-    },
-    {
-      "csq": "BF"
-    },
-    {
-      "csq": "NE"
-    },
-    {
-      "csq": "LK"
-    },
-    {
-      "csq": "CS"
-    },
-    {
-      "csq": "BT"
-    },
-    {
-      "csq": "MN"
-    },
-    {
-      "csq": "HU"
-    },
-    {
-      "csq": "EC"
-    },
-    {
-      "csq": "SH"
-    },
-    {
-      "csq": "DE"
-    },
-    {
-      "csq": "IR"
-    },
-    {
-      "csq": "HU"
-    },
-    {
-      "csq": "VE"
-    },
-    {
-      "csq": "GR"
-    },
-    {
-      "csq": "NF"
-    },
-    {
-      "csq": "FK"
-    },
-    {
-      "csq": "VN"
-    },
-    {
-      "csq": "VC"
-    },
-    {
-      "csq": "PK"
-    },
-    {
-      "csq": "CA"
-    },
-    {
-      "csq": "LC"
-    },
-    {
-      "csq": "EH"
-    },
-    {
-      "csq": "HM"
-    },
-    {
-      "csq": "GH"
-    },
-    {
-      "csq": "DM"
-    },
-    {
-      "csq": "CH"
-    },
-    {
-      "csq": "ML"
+      "id": "0",
+      "lenderId": "lender ID",
+      "name": "Lender name",
+      "pricing": "Content to be decided [Enum]",
+      "categoryId": "lender category ID",
+      "createdAt": "some date"
+    },
+    {
+      "id": "1",
+      "lenderId": "lender ID",
+      "name": "Lender name different",
+      "pricing": "Content to be decided [Enum]",
+      "categoryId": "lender category ID",
+      "createdAt": "some date"
     }
   ]
 }
