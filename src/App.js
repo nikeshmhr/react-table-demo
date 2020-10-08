@@ -65,13 +65,34 @@ function Table({ columns, data }) {
         headerGroups,
         rows,
         prepareRow,
+        setHiddenColumns,
+        state,
+        ...rest
     } = useTable(
         {
             columns,
-            data
+            data,
+            // initialState: {
+            //     hiddenColumns: ['somethingIncomeRate']
+            // }
         },
         useSortBy
     );
+
+    const defaultColumnsByKey = React.useMemo(() => {
+        return {
+            'incomeRate': ['incomeRateAnother'],
+            'somethingIncomeRate': ['somethingIncomeRateAnother'],
+            'differentIncomeRate': ['differentIncomeRateAnother'],
+        }
+    }, [])
+
+    const toggleColumnHide = (columnIds) => {
+        setHiddenColumns((existingHiddenColumns) => {
+            const hideThese = columnIds.filter(c => !existingHiddenColumns.includes(c));
+            return [...hideThese];
+        });
+    }
 
 // Render the UI for your table
     return (
@@ -80,7 +101,16 @@ function Table({ columns, data }) {
             {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map(column => (
-                        <th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render('Header')}</th>
+                        <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                            {column.render('Header')}
+                            {
+                                Object.keys(defaultColumnsByKey).includes(column.id) &&
+                                <button type="button" onClick={(e) => {
+                                    toggleColumnHide(defaultColumnsByKey[column.id]);
+                                    e.stopPropagation();
+                                }}>{isSubset(state.hiddenColumns, defaultColumnsByKey[column.id]) ? 'Open' : 'Close'}</button>
+                            }
+                        </th>
                     ))}
                 </tr>
             ))}
@@ -200,15 +230,20 @@ function App() {
 
     const data = React.useMemo(() => [...rowData], [rowData]);
 
-    console.log('final', cols, data);
+    // console.log('final', cols, data);
     return (
         <>
-            <button type="button" onClick={fetchNiches} style={{ margin: '10px' }}>AddColumns {columnCount}</button>
+            <button type="button" onClick={fetchNiches} style={{ margin: '10px' }} disabled={columnCount === 3}>AddColumns {columnCount}</button>
             <Styles>
                 <Table columns={cols} data={data}/>
             </Styles>
         </>
     )
+}
+
+// Checks if secondary list subset of main list
+function isSubset(main, secondary) {
+    return secondary.every(e => main.includes(e));
 }
 
 export default App
